@@ -19,4 +19,4 @@ jobs:
           go-version: "1.25.1"
 
       - name: Running auth tests
-        run: go test -v ./internal/auth
+        run: go test -cover -v ./internal/auth
