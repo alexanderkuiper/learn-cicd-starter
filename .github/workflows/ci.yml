@@ -32,3 +32,8 @@ jobs:
       
       - name: Check if style passed
         run: test -z $(go fmt ./...) 
+
+      - name: Linter
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
