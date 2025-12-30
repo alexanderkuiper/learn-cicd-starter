@@ -20,3 +20,15 @@ jobs:
 
       - name: Running auth tests
         run: go test -cover -v ./internal/auth
+
+  style:
+    name: Style code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+      
+      - name: Check if style passed
+        run: test -z $(go fmt ./...) 
